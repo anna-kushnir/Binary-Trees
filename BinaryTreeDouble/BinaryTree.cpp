@@ -26,20 +26,20 @@ Node* BinaryTree::createTree(double* arrayKeys, int index, int n)
 	return node;
 }
 
-void BinaryTree::deleteNodes(Node* node)
+void BinaryTree::deleteTree(Node* node)
 {
 	if (node->left != NULL) {
-		deleteNodes(node->left);
+		deleteTree(node->left);
 	}
 	if (node->right != NULL) {
-		deleteNodes(node->right);
+		deleteTree(node->right);
 	}
 	free(node);
 }
 
 void BinaryTree::clearMemory()
 {
-	deleteNodes(Root);
+	deleteTree(Root);
 }
 
 void BinaryTree::printTree(Node* node, int level)
@@ -56,4 +56,25 @@ void BinaryTree::printTree(Node* node, int level)
 void BinaryTree::printTree()
 {
 	printTree(Root, 0);
+}
+
+void BinaryTree::findLeafs(Node* node, double* leafs, int& index)
+{
+	if (node->left == NULL && node->right == NULL) {
+		leafs[index++] = node->getKey();
+		return;
+	}
+	if (node->left != NULL) {
+		findLeafs(node->left, leafs, index);
+	}
+	if (node->right != NULL) {
+		findLeafs(node->right, leafs, index);
+	}
+}
+double* BinaryTree::findLeafs(int m)
+{
+	double* leafs = new double[m];
+	int index = 0;
+	findLeafs(Root, leafs, index);
+	return leafs;
 }

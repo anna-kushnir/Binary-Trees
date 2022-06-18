@@ -2,8 +2,10 @@
 #include "Node.h"
 class BinaryTree
 {
-	static void deleteNodes(Node* node);
+	static void deleteTree(Node* node);
 	static void printTree(Node* node, int level);
+	static void findLeafs(Node* node, double* leafs, int& index);
+
 public:
 	Node* Root;
 
@@ -14,4 +16,5 @@ public:
 	static Node* createTree(double* arrayKeys, int index, int n);
 	void printTree();
 	void clearMemory();
+	double* findLeafs(int m);
 };
