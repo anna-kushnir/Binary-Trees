@@ -1,4 +1,4 @@
-#include "functions.h"
+п»ї#include "functions.h"
 using namespace std;
 
 BinaryTree createTree()
@@ -7,10 +7,10 @@ BinaryTree createTree()
 	int num;
 	BinaryTree Tree;
 	while (true) {
-		cout << "Введіть корінь дерева (перше число послідовності): ";
+		cout << "Р’РІРµРґС–С‚СЊ РєРѕСЂС–РЅСЊ РґРµСЂРµРІР° (РїРµСЂС€Рµ С‡РёСЃР»Рѕ РїРѕСЃР»С–РґРѕРІРЅРѕСЃС‚С–): ";
 		try {
 			cin >> num;
-			if (cin.fail()) throw "Некоректне введення числа!";
+			if (cin.fail()) throw "РќРµРєРѕСЂРµРєС‚РЅРµ РІРІРµРґРµРЅРЅСЏ С‡РёСЃР»Р°!";
 			else {
 				Tree.Root = new Node(num);
 				cin.clear();
@@ -21,14 +21,14 @@ BinaryTree createTree()
 		catch (const char*) {
 			cin.clear();
 			cin.ignore(32767, '\n');
-			cout << "Некоректне введення даних: ви повинні ввести ціле число!\n";
+			cout << "РќРµРєРѕСЂРµРєС‚РЅРµ РІРІРµРґРµРЅРЅСЏ РґР°РЅРёС…: РІРё РїРѕРІРёРЅРЅС– РІРІРµСЃС‚Рё С†С–Р»Рµ С‡РёСЃР»Рѕ!\n";
 		}
 	}
 	while (flag == 'Y' || flag == 'y') {
-		cout << "\nВведіть число: ";
+		cout << "\nР’РІРµРґС–С‚СЊ С‡РёСЃР»Рѕ: ";
 		try {
 			cin >> num;
-			if (cin.fail()) throw "Некоректне введення числа!";
+			if (cin.fail()) throw "РќРµРєРѕСЂРµРєС‚РЅРµ РІРІРµРґРµРЅРЅСЏ С‡РёСЃР»Р°!";
 			else {
 				Tree.addNode(num); 
 				cin.clear();
@@ -38,10 +38,10 @@ BinaryTree createTree()
 		catch (const char*) {
 			cin.clear();
 			cin.ignore(32767, '\n');
-			cout << "Некоректне введення даних: ви повинні ввести ціле число!\n";
+			cout << "РќРµРєРѕСЂРµРєС‚РЅРµ РІРІРµРґРµРЅРЅСЏ РґР°РЅРёС…: РІРё РїРѕРІРёРЅРЅС– РІРІРµСЃС‚Рё С†С–Р»Рµ С‡РёСЃР»Рѕ!\n";
 			continue;
 		}
-		cout << "Бажаєте продовжити введення? (Y/N) "; cin >> flag;
+		cout << "Р‘Р°Р¶Р°С”С‚Рµ РїСЂРѕРґРѕРІР¶РёС‚Рё РІРІРµРґРµРЅРЅСЏ? (Y/N) "; cin >> flag;
 	}
 	return Tree;
 }
