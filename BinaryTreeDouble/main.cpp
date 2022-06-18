@@ -22,7 +22,7 @@ int main()
 		return 0;
 	}
 
-	BinaryTree Tree = BinaryTree::createTree(nums, 0, n);
+	BinaryTree Tree(nums, n);
 	delete[] nums;
 
 	cout << "\nВведене вами дерево:\n\n";
