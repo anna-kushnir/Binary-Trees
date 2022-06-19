@@ -114,3 +114,16 @@ void BinarySearchTree::deleteRecurringNodes()
 {
 	Root = deleteRecurringNodes(Root);
 }
+
+void BinarySearchTree::printTreePostfix(Node* node)
+{
+	if (node != NULL) {
+		printTreePostfix(node->left);
+		printTreePostfix(node->right);
+		cout << "  " << node->getKey();
+	}
+}
+void BinarySearchTree::printTreePostfix()
+{
+	printTreePostfix(Root);
+}

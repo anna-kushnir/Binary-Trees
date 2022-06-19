@@ -24,6 +24,9 @@ int main()
 
 	cout << "\n\nДерево після видалення вершин:\n\n";
 	Tree.printTree();
+
+	cout << "\n\nВигляд дерева при його постфіксному обході:\n\n";
+	Tree.printTreePostfix();
 	cout << "\n\n";
 
 	Tree.clearMemory();

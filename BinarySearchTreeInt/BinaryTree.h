@@ -6,7 +6,7 @@ class BinaryTree
 private:
 	static void printTree(Node* node, int level);
 	static void addNode(int newKey, Node* node);
-	static void deleteNode(Node* node);
+	static void clearMemory(Node* node);
 
 public:
 	Node* Root;

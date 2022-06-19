@@ -4,6 +4,7 @@ using namespace std;
 class BinarySearchTree
 {
 	static void printTree(Node* node, int level);
+	static void printTreePostfix(Node* node);
 	static void clearMemory(Node* node);
 
 	static void addNode(Node* node, char symb);
@@ -17,6 +18,7 @@ public:
 	BinarySearchTree(string symbs);
 
 	void printTree();
+	void printTreePostfix();
 	void clearMemory();
 
 	void deleteRecurringNodes();

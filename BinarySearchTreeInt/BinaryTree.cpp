@@ -60,20 +60,22 @@ void BinaryTree::printTree()
 	}
 }
 
-void BinaryTree::deleteNode(Node* node)
+void BinaryTree::clearMemory(Node* node)
 {
+	if (node->left == NULL && node->right == NULL) {
+		free(node);
+		return;
+	}
 	if (node->left != NULL) {
-		deleteNode(node->left);
-		free(node->left);
+		clearMemory(node->left);
 	}
 	if (node->right != NULL){
-		deleteNode(node->right);
-		free(node->right);
+		clearMemory(node->right);
 	}
 }
 
 void BinaryTree::clearMemory()
 {
-	deleteNode(Root);
+	clearMemory(Root);
 	free(Root);
 }
