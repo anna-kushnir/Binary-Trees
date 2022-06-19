@@ -13,6 +13,10 @@ int main()
 	SetConsoleOutputCP(1251);
 
 	int n = inputNumOfElem();
+	if (n == 0) {
+		cout << "Дерево не має вузлів!\n";
+		return 0;
+	}
 	int* nums = inputArray(n);
 
 	BinarySearchTree Tree(nums, n);
@@ -20,7 +24,15 @@ int main()
 
 	cout << "\nВведене вами дерево:\n\n";
 	Tree.printTree();
-	cout << "\n\n";
+
+	bool flag = Tree.isBalanced();
+	if (flag) {
+		cout << "\n\nВведене дерево - збалансоване.\n\n";
+	}
+	else {
+		cout << "\n\nВведене дерево - НЕ збалансоване.\n\n";
+	}
+
 	Tree.clearMemory();
 
 	system("pause");

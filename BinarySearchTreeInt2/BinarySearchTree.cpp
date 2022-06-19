@@ -60,3 +60,50 @@ void BinarySearchTree::clearMemory()
 {
 	deleteNodes(Root);
 }
+
+void BinarySearchTree::countMaxHeight(Node* node, int i, int& height)
+{
+	if (node->left != NULL) {
+		i++;
+		if (i > height) {
+			height = i;
+		}
+		countMaxHeight(node->left, i, height);
+		i--;
+	}
+	if (node->right != NULL) {
+		i++;
+		if (i > height) {
+			height = i;
+		}
+		countMaxHeight(node->right, i, height);
+		i--;
+	}
+}
+void BinarySearchTree::countMinHeight(Node* node, int i, int& height)
+{
+	if (node->left != NULL) {
+		i++;
+		countMinHeight(node->left, i, height);
+		i--;
+	}
+	if (node->right != NULL) {
+		i++;
+		countMinHeight(node->right, i, height);
+		i--;
+	}
+	if (node->left == NULL || node->right == NULL) {
+		if (i < height) {
+			height = i;
+		}
+	}
+}
+
+bool BinarySearchTree::isBalanced()
+{
+	int min = 0, max = 0;
+	countMaxHeight(Root, 0, max);
+	min = max;
+	countMinHeight(Root, 0, min);
+	return (min + 1 >= max) ? true : false;
+}
