@@ -22,9 +22,6 @@ void BinarySearchTree::addNode(int key, Node* node)
 		}
 		else addNode(key, node->left);
 	}
-	else if (key == node->getKey()) {
-		return;
-	}
 }
 
 void BinarySearchTree::printTree(Node* node, int level)
@@ -101,7 +98,7 @@ void BinarySearchTree::countMinHeight(Node* node, int i, int& height)
 
 bool BinarySearchTree::isBalanced()
 {
-	int min = 0, max = 0;
+	int min, max = 0;
 	countMaxHeight(Root, 0, max);
 	min = max;
 	countMinHeight(Root, 0, min);
