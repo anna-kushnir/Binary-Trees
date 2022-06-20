@@ -1,4 +1,4 @@
-#include "functions.h"
+ï»¿#include "functions.h"
 using namespace std;
 
 string inputString()
@@ -15,7 +15,7 @@ string inputString()
 	catch (const char*) {
 		cin.clear();
 		cin.ignore(32767, '\n');
-		cout << "Íåêîðåêòíå ââåäåííÿ!\nÂâåä³òü ðÿäîê ùå ðàç: ";
+		cout << "ÐÐµÐºÐ¾Ñ€ÐµÐºÑ‚Ð½Ðµ Ð²Ð²ÐµÐ´ÐµÐ½Ð½Ñ!\nÐ’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ñ€ÑÐ´Ð¾Ðº Ñ‰Ðµ Ñ€Ð°Ð·: ";
 		str = inputString();
 	}
 	return str;
