@@ -1,3 +1,3 @@
-## Solving problems with binary trees ("Fundamentals of Programming").
+## Solving problems with binary trees ("Basics of Programming").
 #### First year, second semester.
-> Kushnir Hanna. IP-12.
+> Hanna Kushnir. IP-12.
